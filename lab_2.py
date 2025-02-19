@@ -3,8 +3,6 @@ from PIL import Image
 import requests
 from io import BytesIO
 
-
-# На вход подаются аргументы которые нам не нужны, поэтому не используем их
 def refresh_buttons(*args):
     search_term = search_var.get()
     current_tab = tabview.get()
@@ -122,7 +120,7 @@ app = customtkinter.CTk()
 app.title("Harry Potter")
 app.geometry("400x600")
 
-tabview = customtkinter.CTkTabview(app, fg_color='#decbb7')
+tabview = customtkinter.CTkTabview(app)
 tabview.pack(padx=20, pady=10, fill="both", expand=True)
 
 tabview.add("Books")
@@ -131,10 +129,10 @@ tabview.add("Houses")
 tabview.add("Spells")
 tabview.set("Books")
 
-scrollable_frame_characters = customtkinter.CTkScrollableFrame(tabview.tab("Characters"), fg_color='#decbb7')
+scrollable_frame_characters = customtkinter.CTkScrollableFrame(tabview.tab("Characters"))
 scrollable_frame_characters.pack(padx=10, pady=10, fill="both", expand=True)
 
-scrollable_frame_spells = customtkinter.CTkScrollableFrame(tabview.tab("Spells"), fg_color='#decbb7')
+scrollable_frame_spells = customtkinter.CTkScrollableFrame(tabview.tab("Spells"))
 scrollable_frame_spells.pack(padx=10, pady=10, fill="both", expand=True)
 
 label = customtkinter.CTkLabel(app, text="Search:")
